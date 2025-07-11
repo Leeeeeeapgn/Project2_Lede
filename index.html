@@ -150,7 +150,7 @@
 
     <section id="scrolly-images" class="scrolly-container">
         <div class="sticky-thing">
-            <img src="bruecke_1.jpg" id="scrolly-image">
+            <img src="bruecke_1.jpeg" id="scrolly-image">
         </div>
         <div class="steps-container">
             <div class="step" id="step1">
@@ -214,7 +214,7 @@
         })();
 
         d3.select("#step1").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bruecke_1.jpg");
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bruecke_1.jpeg");
         });
 
         d3.select("#step2").on('stepin', (e) => {
