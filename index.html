@@ -144,9 +144,7 @@
             height: 100%;
         }
     </style>
-</head>
 
-<body>
     <div class="header with-video-bg">
         <div class="video-background">
             <video src="/Project2_Lede/video_short3.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
@@ -175,9 +173,7 @@
   <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
-</head>
 
-<body>
   <div class="content">
     <div class="header">
       <h1>This is a scrollytelling template where images change in the background</h1>
@@ -196,34 +192,19 @@
       <strong>make sure you change the background color of the overlays</strong>. Otherwise I will go crazy.
     </p>
   </div>
-  <section id="scrolly-images" class="scrolly-container">
-    <div class="sticky-thing">
-      <img src="bruecke_1">
+<section id="scrolly-images" class="scrolly-container">
+  <div class="sticky-thing">
+    <img src="bruecke_1.jpg" id="scrolly-image">
+  </div>
+  <div class="steps-container">
+    <div class="step" id="step1">
+      <p>Bild 1: Baubeginn an der Brücke</p>
     </div>
-    <div class="steps-container">
-      <div class="step" id="step1">
-        <div>
-          <p>Step one, adjust the CSS at the bottom of this page to change spacing between steps.</p>
-          <p>Here is some more text, in case there are multiple paragraphs.</p>
-        </div>
-      </div>
-      <div class="step" id="step2">
-        <p>Find the JavaScript code near the bottom to associate each step with an image change.</p>
-      </div>
-      <div class="step" id="step3">
-        <p>By default, the steps are a set width and the text is left-centered. Find the rule in
-          <code>scrolly-styles.css</code> that refers to <code>.step > *</code> to adjust or remove the width, center
-          the text, or change the background color/opacity.
-        </p>
-      </div>
-      <div class="step" id="step4">
-        <p>Step four, lorem ipsum dolor sic amet.</p>
-      </div>
-      <div class="step" id="step5">
-        <p>Step five, lorem ipsum dolor sic amet.</p>
-      </div>
+    <div class="step" id="step2">
+      <p>Bild 2: Fertigstellung der Hauptträger</p>
     </div>
-  </section>
+  </div>
+</section>  </section>
   <div class="content">
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
@@ -305,7 +286,7 @@
     })
 
     d3.select("#step2").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bruecke_2.pgn")
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bruecke_2.png")
     })
       
   </script>
