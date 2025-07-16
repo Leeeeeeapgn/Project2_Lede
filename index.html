@@ -140,10 +140,10 @@
     <div class="content">
         <div class="header">
             <h1>The bridge</h1>
-            <p class="subhead">China continues to astonish the world with the speed of its infrastructure development. While bridge projects in Germany often take decades to complete, similar structures in China are finished within weeks or months. What is its secret?</p>
+            <p class="subhead">China continues to astonish the world with the speed of its infrastructure development. While bridge projects in Germany often take decades to complete, similar structures in China are finished within weeks or months. What is its secret? One new bridge along the Yellow River helps to understand Chinese new super power.</p>
         </div>
         <div class="byline">
-            <p>By By Lea Löwenzahn</p>
+            <p>By Lea Löwenzahn</p>
         </div>
         <p>Lorem ipsum dolor sit amet...</p>
     </div>
@@ -157,7 +157,22 @@
                 <p>Bild 1: </p>
             </div>
             <div class="step" id="step2">
-                <p>The 203-meter-high main tower makes it the tallest bridge across the Yellow River and the highest combined road-rail bridge in northern China. With a main span of 588 meters, it features an exceptionally long stretch, designed to accommodate the river’s wide landscape and ensure flood resilience. It is regarded as the "No. 1 crossing of the Yellow River" (黄河第一跨), underscoring its significance as the most prominent bridge project on the river.</p>
+                <p>The 203-meter-high main tower makes it the tallest bridge across the Yellow River and the highest combined road-rail bridge in northern China. The main span of 588 meters ist designed to accommodate the river’s wide landscape and ensure flood resilience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neuer Scrolly-Abschnitt für Bild 3 und 4 -->
+    <section id="scrolly-images-2" class="scrolly-container">
+        <div class="sticky-thing">
+            <img src="existingtracks1.png" id="scrolly-image-2">
+        </div>
+        <div class="steps-container">
+            <div class="step" id="step3">
+                <p>Bild 3: Brücke bei Nacht</p>
+            </div>
+            <div class="step" id="step4">
+                <p>Bild 4: Blick auf die fertige Fahrbahn</p>
             </div>
         </div>
     </section>
@@ -218,7 +233,41 @@
         });
 
         d3.select("#step2").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bruecke_2.png");
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "newtracks1.png");
+        });
+
+        // Zweiter Scrolly-Abschnitt
+        (() => {
+            const scroller2 = scrollama();
+
+            scroller2
+                .setup({
+                    parent: document.querySelector("#scrolly-images-2"),
+                    step: ".step",
+                    offset: 0.6,
+                    debug: true,
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } });
+                    element.dispatchEvent(event);
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } });
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } });
+                        element.previousElementSibling.dispatchEvent(event);
+                    }
+                });
+
+            window.addEventListener("resize", scroller2.resize);
+        })();
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bild_3.jpeg");
+        });
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bild_4.jpeg");
         });
     </script>
 </body>
