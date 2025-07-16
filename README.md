@@ -23,7 +23,7 @@ Everyone suggests QGIS as the quick solution for these tasks. I found this data:
 
 I spent endless hours in Datawrapper, QGIS and Wikipedia and then finally found this post, which nearly made me cry:  https://www.datawrapper.de/blog/weekly-china-high-speed-rail-geojson-import
 
-After importing those rail lines, I repeated the same  process for the Yellow River. But again, the full river was too much data for Datawrapper, which meant back to QGIS and realizing after a while that it didn't work really.
+After importing those rail lines, I repeated the same  process for the Yellow River. But again, the full river was too much data for Datawrapper, which meant back to QGIS and realizing after a while that it didn't work really. Last but not least there were the tracks which are just about to be built, so how to import them? 
 
 In the end all was done but not really satisfying.
 
