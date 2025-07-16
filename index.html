@@ -189,7 +189,6 @@
                 parent: document.querySelector("#scrolly-images"),
                 step: ".step-1",
                 offset: 0.6,
-                debug: true,
             })
             .onStepEnter(function ({ element, index, direction }) {
                 const event = new CustomEvent("stepin", { detail: { direction: direction } });
@@ -222,7 +221,6 @@
                 parent: document.querySelector("#scrolly-images-2"),
                 step: ".step-2",
                 offset: 0.6,
-                debug: true,
             })
             .onStepEnter(function ({ element, index, direction }) {
                 const event = new CustomEvent("stepin", { detail: { direction: direction } });
